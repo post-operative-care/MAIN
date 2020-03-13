@@ -113,9 +113,23 @@ void sign_up_page()
 
 
     } while (true);
+   
+}
 
+void register_page() 
+{
+    
+    ofstream file_out("data.txt",ios::app);
+    
 
-
+    cout << "-------------------------------------------------------" << endl;
+    sign_up_page();
+    cout << "-------------------------------------------------------" << endl;
+    cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    cout << "-------------------------------------------------------" << endl;
+    file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    
+    
 }
 
 
