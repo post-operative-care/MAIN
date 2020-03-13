@@ -8,13 +8,19 @@
 int main() 
 {
     
-    ofstream file_out("data.txt");
+    ofstream file_out("data.txt",ios::app);
     ifstream file_in("data.txt");
     string textline;
 
+    cout << "-------------------------------------------------------" << endl;
     sign_up_page();
+    cout << "-------------------------------------------------------" << endl;
+    cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    cout << "-------------------------------------------------------" << endl;
+    file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    
 
-    cout << "ID = " << VecID[0] << " PASSWORD = " << VecPASS[0];
     return 0;
+    
 }
 
