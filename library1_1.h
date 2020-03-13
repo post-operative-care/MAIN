@@ -7,6 +7,7 @@ using namespace std;
 
 
 bool charchecker(string text_input)
+// this function used to detect input on username must be only a-z,A-Z,0-9
 {
     bool check;
     for (int i = 0; i < text_input.size(); i++)
@@ -30,6 +31,8 @@ bool charchecker(string text_input)
 }
 
 bool checkduplicateID(string ID)
+/* this function used to detect input on username that user gave
+ not already in used in database */
 {
     char cerent_name[100];
     ifstream file_in("data.txt");
@@ -58,7 +61,10 @@ bool checkduplicateID(string ID)
 
 vector <string> VecID;
 vector <string> VecPASS;
+
 void sign_up_page()
+/*This function is the main core for register page. It cin
+ Username and password then put it back to VecID and VecPASS.*/
 { 
     bool charcheck;
     string text_input;
@@ -117,6 +123,7 @@ void sign_up_page()
 }
 
 void register_page() 
+/*not spacial in this func just make absaction for easy way to use in main*/
 {
     
     ofstream file_out("data.txt",ios::app);
