@@ -9,8 +9,7 @@ int main()
 {
     
     ofstream file_out("data.txt",ios::app);
-    ifstream file_in("data.txt");
-    string textline;
+    
 
     cout << "-------------------------------------------------------" << endl;
     sign_up_page();

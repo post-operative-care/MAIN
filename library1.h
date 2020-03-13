@@ -65,6 +65,7 @@ bool charchecker(string text_input)
     return check;
 }
 
+
 vector <ID_Pass> database1;
 
 void sign_up_page()

@@ -28,6 +28,34 @@ bool charchecker(string text_input)
         }
     return check;
 }
+
+bool checkduplicateID(string ID)
+{
+    char cerent_name[100];
+    ifstream file_in("data.txt");
+    string textline;
+    
+    while (getline(file_in,textline))
+    {
+        //testcase
+        //cout << "textline = " << textline << endl;
+        sscanf(textline.c_str(),"ID = %s ",&cerent_name);
+        //cout << cerent_name << endl;
+
+        if (cerent_name == ID)
+        {
+            cout << "This username is already taken." << endl;
+            return true;
+        }
+        
+
+        
+    }
+    return false;
+    file_in.close(); 
+}
+
+
 vector <string> VecID;
 vector <string> VecPASS;
 void sign_up_page()
@@ -44,6 +72,14 @@ void sign_up_page()
         getline(cin,text_input);
 
         charcheck = charchecker(text_input);
+        
+        if (checkduplicateID(text_input) == true)
+        {
+            continue;
+        }
+        
+        
+        
         str_id = text_input;
         VecID.push_back(str_id);
         
