@@ -1,28 +1,24 @@
-#include<iostream>
-#include<fstream>
-#include<iomanip>
+#include"library1.h"
 
-struct Pt_data
-{
-    string name;
-    int age;
-    string doc_name;
-    string Disease_name;
-    
-};
-
-using namespace std;
 int main() 
 {
-    fstream file("data.txt");
-    string textline;
-    while (getline(file,textline))
-    {
+    
+    // ofstream file_data("data.txt");
+    // ifstream file_input("data.txt");
+    // string textline;
+
+    // while (getline(file_input,textline))
+    // {
         
 
-    }
-    
+    // }
+    // file_input.close();
 
 
+    sign_up_page();
+
+    cout << database1[0].showID;
+
+    return 0;
 }
 
