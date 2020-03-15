@@ -32,7 +32,7 @@ bool charchecker(string text_input)
 
 bool checkduplicateID(string ID)
 /* this function used to detect input on username that user gave
- not already in used in database */
+ not in used in database */
 {
     char cerent_name[100];
     ifstream file_in("data.txt");
@@ -74,7 +74,7 @@ void sign_up_page()
     do{
 
 
-        cout << "Please enter your Username : ";
+        cout << "Please enter your Username(Register) : ";
         getline(cin,text_input);
 
         charcheck = charchecker(text_input);
@@ -93,7 +93,7 @@ void sign_up_page()
         if (charcheck == true)
         {
             p1:
-            cout << "Please enter your Password : ";
+            cout << "Please enter your Password(Register) : ";
             getline(cin,text_input);
 
             charcheck = charchecker(text_input);
@@ -137,6 +137,77 @@ void register_page()
     file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
     
+}
+
+void login_page()
+{   
+    bool login_success = false;
+    bool usernamecheck = false;
+    bool charcheck;
+    string text_input;
+    string str_id;
+    string str_password;
+    string now_username;
+    string now_password;
+    
+   
+    do{
+        cout << "-------------------------------------------------------" << endl;
+       
+        cout << "Please enter your Username(Login) : ";
+        getline(cin,now_username);
+
+        cout << "Please enter your Password(Login) : ";
+        getline(cin,now_password);
+
+        cout << "-------------------------------------------------------" << endl;
+
+        char databese_name[100];
+        char database_pass[100];
+        ifstream file_in("data.txt");
+        string textline;
+
+        while (getline(file_in,textline)) // find username and pass in database
+        {
+            //testcase
+            //cout << "textline = " << textline << endl;
+            sscanf(textline.c_str(),"ID = %s PASSWORD : %s",&databese_name,&database_pass);
+            //cout << databese_name << " " << database_pass << endl;
+
+            if (databese_name == now_username) 
+            /*If Username that user input it's already in database 
+            program will change usernamecheck to true*/
+            {
+                usernamecheck = true;
+                //cout << usernamecheck << 1;
+                break;
+            }
+            
+        }
+        file_in.close();
+
+        //cout << usernamecheck << 2;
+        if (usernamecheck == true)
+        {
+            if (database_pass == now_password)
+            {
+                cout << "login success" << endl;
+                cout << "-------------------------------------------------------" << endl;
+                login_success = true;
+                break;
+                
+            }
+        }
+        else
+        {
+            cout << "Username or Password  worng" << endl;
+            cout << "Please enter your Username and Password again" << endl;
+            continue;
+            cout << "-------------------------------------------------------" << endl;
+        }
+        
+    } while (login_success == false);
+   
 }
 
 

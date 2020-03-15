@@ -1,12 +1,14 @@
 #include"library1_1.h"
 
-/*from Dev
-    -Now my code can get ID and password
-     and put back to Vector*/
  
 int main()
  {
-    register_page();
+    //login page()
+    //if select register -> register_page ()
+    //if select 
+    
+    //register_page();
+    login_page();
     
 
     return 0;
