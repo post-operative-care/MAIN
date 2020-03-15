@@ -122,6 +122,7 @@ void sign_up_page()
    
 }
 
+
 void register_page() 
 /*not spacial in this func just make absaction for easy way to use in main*/
 {
