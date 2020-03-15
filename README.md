@@ -12,7 +12,7 @@ ver 1.0.2
    + Now our code can detect when username that you puts  in register page it's already in used
 
 ver 1.0.3
-   + Now our program have login page 
+   + Now our program have login page  
 
 
 
