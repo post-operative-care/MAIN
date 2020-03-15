@@ -35,7 +35,7 @@ bool checkduplicateID(string ID)
  not in used in database */
 {
     char cerent_name[100];
-    ifstream file_in("data.txt");
+    ifstream file_in("database/user_data.txt");
     string textline;
     
     while (getline(file_in,textline))
@@ -127,14 +127,14 @@ void register_page()
 /*not spacial in this func just make absaction for easy way to use in main*/
 {
     
-    ofstream file_out("data.txt",ios::app);
+    ofstream file_out("database/user_data.txt",ios::app);
     
 
     cout << "-------------------------------------------------------" << endl;
     sign_up_page();
     cout << "-------------------------------------------------------" << endl;
     cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
-    cout << "-------------------------------------------------------" << endl;
+    
     file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
     
@@ -165,7 +165,7 @@ void login_page()
 
         char databese_name[100];
         char database_pass[100];
-        ifstream file_in("data.txt");
+        ifstream file_in("database/user_data.txt");
         string textline;
 
         while (getline(file_in,textline)) // find username and pass in database
