@@ -2,6 +2,8 @@
 #include<fstream>
 #include<iomanip>
 #include<vector>
+#include<cstring>
+#include<string>
 
 using namespace std;
 
@@ -69,8 +71,9 @@ void sign_up_page()
     bool charcheck;
     string text_input;
     string str_id;
+    char str_idEnc[69];
     string str_password;
-   
+    char str_passwordEnc[69];
     do{
 
 
@@ -84,10 +87,13 @@ void sign_up_page()
             continue;
         }
         
-        
-        
         str_id = text_input;
-        VecID.push_back(str_id);
+        strcpy(str_idEnc,str_id.c_str());
+        for (int i = 0; i<69 && str_idEnc[i]!='\0' ; i++) 
+        {
+            str_idEnc[i]=str_idEnc[i]+2;
+        }
+        VecID.push_back(str_idEnc);
         
 
         if (charcheck == true)
@@ -100,7 +106,12 @@ void sign_up_page()
             if (charcheck == true)
             {
                 str_password = text_input;
-                VecPASS.push_back(str_password);
+                strcpy(str_passwordEnc,str_password.c_str());
+            for (int i = 0; i<69 && str_passwordEnc[i]!='\0' ; i++) 
+            {
+            str_passwordEnc[i]=str_passwordEnc[i]+2;
+            }
+                VecPASS.push_back(str_passwordEnc);
                 break;
             }
             else
@@ -133,7 +144,8 @@ void register_page()
     cout << "-------------------------------------------------------" << endl;
     sign_up_page();
     cout << "-------------------------------------------------------" << endl;
-    cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+
+    cout << "ID  = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
     file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
