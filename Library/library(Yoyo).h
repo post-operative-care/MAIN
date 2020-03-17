@@ -33,7 +33,7 @@ void selectPage(){
     }else if(input == "4"){
         break;
     }else{
-        cout << "Error Invalid Input";
+        cout << "Error Invalid Input\n";
     }
     }while(true);
 }
