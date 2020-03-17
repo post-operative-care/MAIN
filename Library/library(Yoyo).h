@@ -1,4 +1,5 @@
 #include<iostream>
+#include"library(Mekkwiz).h"
 #include<cstdlib>
 #include<iomanip>
 #include<string>
@@ -12,11 +13,27 @@ void Start(){
     }
 }
 
-int selectPage(){
-    int input;
+void selectPage(){
+    string input;
     cout << "Did You Have An Accout?\n";
-    cout << "1 If you have , 2 IF you don't have ,3 If You are Medical Staff\n";
-    cout << "Input Your Command Here: ";
-    cin >> input;
-    return input;
+    cout << "[1] If you have\n[2] IF you don't have\n[3] If You are Medical Staff\n[4] For Exit\n";
+    do{cout << "Input Your Command Here: ";
+    //cin >> input;
+    getline(cin,input);
+    if(input == "1"){
+        login_page();
+        break;
+    }else if(input == "2"){
+        register_page();
+        login_page();
+        break;
+    }else if(input == "3"){
+        //wait for medical staff func
+        break;
+    }else if(input == "4"){
+        break;
+    }else{
+        cout << "Error Invalid Input";
+    }
+    }while(true);
 }
