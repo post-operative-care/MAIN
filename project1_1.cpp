@@ -1,7 +1,7 @@
-#include"library/library(Mekkwiz).h"
+// #include"library/library(Mekkwiz).h"
 #include"library/libralyPack.h"
-#include"library/library(Yoyo).h"
-#include"library/phird.h"
+// #include"library/library(Yoyo).h"
+// #include"library/phird.h"
 
 
 int main()
@@ -10,8 +10,9 @@ int main()
     //if select register -> register_page ()
     //if select 
     
-    register_page();
-    login_page();
+   //  register_page();
+   //  login_page();
+   Select_case(5);
     
 
     return 0;
