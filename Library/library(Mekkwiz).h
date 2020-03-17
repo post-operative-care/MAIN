@@ -2,11 +2,9 @@
 #include<fstream>
 #include<iomanip>
 #include<vector>
-#include<cstring>
-#include<string>
-#include"phird.h"
 
 using namespace std;
+
 
 bool charchecker(string text_input)
 // this function used to detect input on username must be only a-z,A-Z,0-9
@@ -71,9 +69,8 @@ void sign_up_page()
     bool charcheck;
     string text_input;
     string str_id;
-    char str_idEnc[69];
     string str_password;
-    char str_passwordEnc[69];
+   
     do{
 
 
@@ -87,7 +84,10 @@ void sign_up_page()
             continue;
         }
         
-        VecID.push_back(Encryption_ID(text_input));
+        
+        
+        str_id = text_input;
+        VecID.push_back(str_id);
         
 
         if (charcheck == true)
@@ -99,8 +99,8 @@ void sign_up_page()
             charcheck = charchecker(text_input);
             if (charcheck == true)
             {
-            
-            VecPASS.push_back(Encryption_PASS(text_input));
+                str_password = text_input;
+                VecPASS.push_back(str_password);
                 break;
             }
             else
@@ -126,30 +126,16 @@ void sign_up_page()
 void register_page() 
 /*not spacial in this func just make absaction for easy way to use in main*/
 {
-char ID[69];
-string id_one;
-char Pass[69];
-string pass_one;
-
+    
     ofstream file_out("database/user_data.txt",ios::app);
     
+
     cout << "-------------------------------------------------------" << endl;
     sign_up_page();
     cout << "-------------------------------------------------------" << endl;
-    /*id_one = VecID;
-    strcpy(ID,id_one.c_str());
-    pass_one = VecPASS;
-    strcpy(Pass,pass_one.c_str());
-    for (int i = 0; i < 69 && ID[i] != '\0'; i++){
-        ID[i]=ID[i]-12;
-    }
-    for (int j = 0; j < 69 && Pass[j] != '\0'; j++){
-        Pass[j]=Pass[j]-8;
-    } */
-
-    //cout << "ID  = " << VecID[0] << " PASSWORD : " << VecID[0] << endl;
-    
-    file_out << "ID = " << VecPASS[0] << " PASSWORD : " << VecPASS[0] << endl;
+    cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    cout << "-------------------------------------------------------" << endl;
+    file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
     
 }
@@ -177,7 +163,7 @@ void login_page()
 
         cout << "-------------------------------------------------------" << endl;
 
-        char database_name[100];
+        char databese_name[100];
         char database_pass[100];
         ifstream file_in("database/user_data.txt");
         string textline;
@@ -186,16 +172,10 @@ void login_page()
         {
             //testcase
             //cout << "textline = " << textline << endl;
-            sscanf(textline.c_str(),"ID = %s PASSWORD : %s",&database_name,&database_pass);
-           
-            //cout << databzse_name << " " << database_pass << endl;
-        //========================================================================================
-        for (int i = 0; i < 69 && database_name[i] !='\0'; i++)
-        {
-            database_name[i]=database_name[i]-12;
-        }
-        //========================================================================================
-            if (database_name == now_username) 
+            sscanf(textline.c_str(),"ID = %s PASSWORD : %s",&databese_name,&database_pass);
+            //cout << databese_name << " " << database_pass << endl;
+
+            if (databese_name == now_username) 
             /*If Username that user input it's already in database 
             program will change usernamecheck to true*/
             {
@@ -206,16 +186,10 @@ void login_page()
             
         }
         file_in.close();
-        
+
         //cout << usernamecheck << 2;
         if (usernamecheck == true)
         {
-        //========================================================================================
-        for (int j = 0; j < 69 && database_pass[j] != '\0'; j++)
-        {
-            database_pass[j]=database_pass[j]-8;
-        }
-        //========================================================================================
             if (database_pass == now_password)
             {
                 cout << "login success" << endl;
@@ -236,6 +210,3 @@ void login_page()
     } while (login_success == false);
    
 }
-
-
-
