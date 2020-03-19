@@ -134,7 +134,7 @@ void register_page()
     sign_up_page();
     cout << "-------------------------------------------------------" << endl;
     cout << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
-    
+    cout << "-------------------------------------------------------" << endl;
     file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
     
     
@@ -210,6 +210,3 @@ void login_page()
     } while (login_success == false);
    
 }
-
-
-
