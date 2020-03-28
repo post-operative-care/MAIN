@@ -4,6 +4,7 @@
 #include<vector>
 #include<string>
 #include<cstdlib>
+#include<cstring>
 
 using namespace std;
 
@@ -61,6 +62,7 @@ void Select_case(int num_case){
 
 }
 
+//from mek.h
 bool charchecker(string text_input)
 // this function used to detect input on username must be only a-z,A-Z,0-9
 {

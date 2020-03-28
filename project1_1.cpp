@@ -10,9 +10,8 @@ int main()
     //if select register -> register_page ()
     //if select 
     
-    register_page();
-    login_page();
-    
+   Start();
+   selectPage();
 
     return 0;
  }
