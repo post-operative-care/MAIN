@@ -5,7 +5,9 @@
 #include<string>
 #include<cstdlib>
 #include<cstring>
+#include<windows.h>
 
+HANDLE h = GetStdHandle( STD_OUTPUT_HANDLE );
 using namespace std;
 
 //from jojo.h
