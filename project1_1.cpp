@@ -1,7 +1,7 @@
-#include"library/library(Mekkwiz).h"
-#include"library/libralyPack.h"
-#include"library/library(Yoyo).h"
-#include"library/phird.h"
+#include"library/ho.h"
+
+
+
 
 
 int main()

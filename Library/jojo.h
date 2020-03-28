@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 //for doc search patient v0
-int main(){
+void find_data(){
     int n=4; 
     vector<string> x(n);
     for(int i=0; i<n; i++){
@@ -29,5 +29,4 @@ int main(){
         cout << "--------------------------------------------------\n" ;
     }
     
-    return 0;
 }
