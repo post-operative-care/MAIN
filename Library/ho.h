@@ -290,7 +290,7 @@ string pass_one;
     
 }
 
-void login_page()
+char login_page()
 {   
     bool login_success = false;
     bool usernamecheck = false;
@@ -315,6 +315,7 @@ void login_page()
 
         char database_name[100];
         char database_pass[100];
+        char type;
         ifstream file_in("database/user_data.txt");
         string textline;
 
@@ -322,7 +323,7 @@ void login_page()
         {
             //testcase
             //cout << "textline = " << textline << endl;
-            sscanf(textline.c_str(),"ID = %s PASSWORD : %s",&database_name,&database_pass);
+            sscanf(textline.c_str(),"ID = %s PASSWORD : %s | TYPE : %c",&database_name,&database_pass,&type);
             string enID = EncryptionID(now_username);
 
             //cout << databzse_name << " " << database_pass << endl;
@@ -348,8 +349,7 @@ void login_page()
                 cout << "login success" << endl;
                 cout << "-------------------------------------------------------" << endl;
                 login_success = true;
-                break;
-                
+                return(type);
             }
         }
         else
