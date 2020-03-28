@@ -6,15 +6,15 @@
 
 int main()
  {
-    //login page()
-    //if select register -> register_page ()
-    //if select 
-    
-   Start();
-   selectPage();
-
-    return 0;
+   
+ 
+   //Start();
+   //selectPage();
+   register_page();
+   login_page();
+   
+   return 0;
  }
 
- 
+
 

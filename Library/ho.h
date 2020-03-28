@@ -62,6 +62,59 @@ void Select_case(int num_case){
 
 }
 
+//from phird.h
+string EncryptionID(string x){
+    char encryp[69];
+
+    strcpy(encryp,x.c_str());
+    for (int i = 0; i < 69 && encryp[i] != '\0' ; i++)
+    {
+        encryp[i]=encryp[i]+2;
+    }
+    string a = encryp;
+    //cout <<"WHAT DAFUQ :: " << a << " ";
+return a;
+
+}
+
+string EncryptionPASS(string y){
+    char encrypPass[69];
+
+    strcpy(encrypPass,y.c_str());
+    for (int j = 0; j < 69 && encrypPass[j] != '\0' ; j++)
+    {
+        encrypPass[j]=encrypPass[j]+3;
+    }
+    string p = encrypPass;
+    //cout <<" Pass DAFUQ :: " << p << " ";
+return p;
+}
+
+string DecrypttionID(string x){
+    char decrypID[69];
+
+    strcpy(decrypID,x.c_str());
+    for (int i = 0; i < 69 && decrypID[i] != '\0' ; i++)
+    {
+        decrypID[i]=decrypID[i]-2;
+    }
+    string deID = decrypID;
+return deID;
+}
+
+string DecrypttionPASS(string x){
+    char decrypPASS[69];
+
+    strcpy(decrypPASS,x.c_str());
+    for (int i = 0; i < 69 && decrypPASS[i] != '\0' ; i++)
+    {
+        decrypPASS[i]=decrypPASS[i]-3;
+    }
+    string dePASS = decrypPASS;
+return dePASS;
+}
+
+
 //from mek.h
 bool charchecker(string text_input)
 // this function used to detect input on username must be only a-z,A-Z,0-9
@@ -232,7 +285,7 @@ string pass_one;
 
     //cout << "ID  = " << VecID[0] << " PASSWORD : " << VecID[0] << endl;
     
-    file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << endl;
+    file_out << "ID = " << VecID[0] << " PASSWORD : " << VecPASS[0] << " | TYPE : P" << endl;
     
     
 }
@@ -328,9 +381,11 @@ void selectPage(){
     //cin >> input;
     getline(cin,input);
     if(input == "1"){
+        //login
         login_page();
         break;
     }else if(input == "2"){
+        //register and login
         register_page();
         login_page();
         break;
@@ -338,6 +393,7 @@ void selectPage(){
         //wait for medical staff func
         break;
     }else if(input == "4"){
+        //exit
         break;
     }else{
         cout << "Error Invalid Input\n";
@@ -345,54 +401,3 @@ void selectPage(){
     }while(true);
 }
 
-//from phird.h
-string EncryptionID(string x){
-    char encryp[69];
-
-    strcpy(encryp,x.c_str());
-    for (int i = 0; i < 69 && encryp[i] != '\0' ; i++)
-    {
-        encryp[i]=encryp[i]+2;
-    }
-    string a = encryp;
-    //cout <<"WHAT DAFUQ :: " << a << " ";
-return a;
-
-}
-
-string EncryptionPASS(string y){
-    char encrypPass[69];
-
-    strcpy(encrypPass,y.c_str());
-    for (int j = 0; j < 69 && encrypPass[j] != '\0' ; j++)
-    {
-        encrypPass[j]=encrypPass[j]+3;
-    }
-    string p = encrypPass;
-    //cout <<" Pass DAFUQ :: " << p << " ";
-return p;
-}
-
-string DecrypttionID(string x){
-    char decrypID[69];
-
-    strcpy(decrypID,x.c_str());
-    for (int i = 0; i < 69 && decrypID[i] != '\0' ; i++)
-    {
-        decrypID[i]=decrypID[i]-2;
-    }
-    string deID = decrypID;
-return deID;
-}
-
-string DecrypttionPASS(string x){
-    char decrypPASS[69];
-
-    strcpy(decrypPASS,x.c_str());
-    for (int i = 0; i < 69 && decrypPASS[i] != '\0' ; i++)
-    {
-        decrypPASS[i]=decrypPASS[i]-3;
-    }
-    string dePASS = decrypPASS;
-return dePASS;
-}
