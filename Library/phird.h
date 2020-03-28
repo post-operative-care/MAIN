@@ -22,7 +22,6 @@ return str_idEnc;
 
 string EncryptionID(string x){
     char encryp[69];
-
     strcpy(encryp,x.c_str());
     for (int i = 0; i < 69 && encryp[i] != '\0' ; i++)
     {
