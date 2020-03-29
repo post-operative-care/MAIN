@@ -23,9 +23,13 @@ return str_idEnc;
 string EncryptionID(string x){
     char encryp[69];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> Edited by DevPHIRD
+=======
+
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
     strcpy(encryp,x.c_str());
     for (int i = 0; i < 69 && encryp[i] != '\0' ; i++)
     {
@@ -35,6 +39,7 @@ string EncryptionID(string x){
     //cout <<"WHAT DAFUQ :: " << a << " ";
 return a;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -66,6 +71,10 @@ return deID;
 =======
 }
 
+=======
+}
+
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
 string EncryptionPASS(string y){
     char encrypPass[69];
 
@@ -91,7 +100,10 @@ string DecrypttionID(string x){
 return deID;
 }
 
+<<<<<<< HEAD
 >>>>>>> Edited by DevPHIRD
+=======
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
 string DecrypttionPASS(string x){
     char decrypPASS[69];
 
