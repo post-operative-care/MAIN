@@ -8,12 +8,12 @@ int main()
 
    char NowType;
 
-   Start();
-   NowType = login_page();
-   SetConsoleTextAttribute(h, 6); //chage color console
-   cout << "now tpye is " << NowType << endl;
-   //direct_to(NowType);
-
+   // Start();
+   // NowType = login_page();
+   // SetConsoleTextAttribute(h, 6); //chage color console
+   // cout << "now tpye is " << NowType << endl;
+   // //direct_to(NowType);
+   selectPage();
 
    return 0;
  }
@@ -29,4 +29,5 @@ int main()
       //goto patient page
    }
 }
+
 

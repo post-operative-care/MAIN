@@ -208,6 +208,8 @@ void sign_up_page()
     string textInput;
     string idEncryp;
     string passInput;
+    string passInput1;
+    string passInput2;
     string PassEncryp;
     //string str_id;
     //char str_idEnc[69];
@@ -231,15 +233,32 @@ void sign_up_page()
         if (charcheck == true)
         {
             p1:
-            cout << "Please enter your Password(Register) : ";
-            getline(cin,passInput);
+            cout << "Please enter your Password(Register) : "; // enter password for register
+            getline(cin,passInput1);
 
-            charcheck = passchecker(passInput);
+            charcheck = passchecker(passInput1);
             if (charcheck == true)
             {
-            PassEncryp=EncryptionPASS(passInput);
-            VecPASS.push_back(PassEncryp);
+            cout << "Please confirm your Password(Register) : "; // confirm password
+            getline(cin,passInput2);
+            cout << "-------------------------------------------------------" << endl;
+
+            if (passInput1 == passInput2)
+            {
+                PassEncryp=EncryptionPASS(passInput2);
+                VecPASS.push_back(PassEncryp);
                 break;
+            }
+            else
+            {
+                cout << "Password and confirm password does not match" << endl;
+                cout << "Please try again" << endl;
+                cout << "-------------------------------------------------------" << endl;
+                goto p1;
+            }
+            
+            
+           
             }
             else
             {
@@ -271,9 +290,7 @@ string pass_one;
 
     ofstream file_out("database/user_data.txt",ios::app);
     
-    cout << "-------------------------------------------------------" << endl;
     sign_up_page();
-    cout << "-------------------------------------------------------" << endl;
     /*id_one = VecID;
     strcpy(ID,id_one.c_str());
     pass_one = VecPASS;
@@ -379,9 +396,12 @@ void selectPage(){
     string input;
     cout << "Did You Have An Accout?\n";
     cout << "[1] If you have\n[2] IF you don't have\n[3] If You are Medical Staff\n[4] For Exit\n";
+    cout << "-------------------------------------------------------" << endl;
     do{cout << "Input Your Command Here: ";
     //cin >> input;
     getline(cin,input);
+    cout << "-------------------------------------------------------" << endl;
+    
     if(input == "1"){
         //login
         login_page();
