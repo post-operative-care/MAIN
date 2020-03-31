@@ -309,7 +309,7 @@ string pass_one;
     
 }
 
-char login_page()
+string login_page()
 {   
     bool login_success = false;
     bool usernamecheck = false;
@@ -368,7 +368,9 @@ char login_page()
                 cout << "login success" << endl;
                 cout << "-------------------------------------------------------" << endl;
                 login_success = true;
-                return(type);
+
+                string output = now_username+" "+type;
+                return output;
             }
         }
         else
