@@ -7,6 +7,9 @@
 #include<string>
 #include<conio.h>
 #include<windows.h>
+#include <stdlib.h>
+
+
 using namespace std ;
 //THIS FOR CHANGE TEXT COLOR IN CONSOLE
 void changeColor(int desiredColor){
@@ -26,16 +29,19 @@ void changeColor(int desiredColor){
         sscanf(textline.c_str(),"Name : %s LastName : %s  Date of Birth %d %s %d",&current_fname, &current_lname );
         cout<<"DP Got From FName Is ::"<< current_fname << endl;
         cout<<"DP Got From LName Is ::"<< current_lname << endl;
-        if (current_fname == fname && current_lname == fname)
+       
+        if (current_fname == fname && current_lname == lname)
         {
             cout << "This Patient has already Registred." << endl;
+            database_file.close(); 
             return true;
-        }  
+            cout << "after return";
+        }
         cout << "PALM IS VERY HANDSOME"<< endl;
 
     }
     return false;
-    database_file.close(); 
+    
  } 
 //===========================================================================
 //===========================================================================
@@ -86,24 +92,24 @@ bool checkduplicateLName(string lname)
 
 //======================================================================
 //THIS FOR FIND NAME OF MONTH BY INT THAT GET FROM USER 
-string findNameMonth(int a){
+string findNameMonth(int a)
+{
 switch (a)
     {
-    case 1: return "January";break;
-    case 2: return "February";break;
-    case 3: return "March";break;
-    case 4: return "April";break;
-    case 5: return "May";break;
-    case 6: return "June";break;
-    case 7: return "July";break;
-    case 8: return "August";break;
-    case 9: return "September";break;
-    case 10: return "October";break;
-    case 11: return "November";break;
-    case 12: return "December";break;    
-    default:
-        break;
-    }
+    case 1: return "January";
+    case 2: return "February";
+    case 3: return "March";
+    case 4: return "April";
+    case 5: return "May";
+    case 6: return "June";
+    case 7: return "July";
+    case 8: return "August";
+    case 9: return "September";
+    case 10: return "October";
+    case 11: return "November";
+    case 12: return "December";   
+    };
+    return 0;
 }
 //=======================================================================
 
