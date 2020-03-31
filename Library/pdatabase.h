@@ -26,7 +26,8 @@ void changeColor(int desiredColor){
         sscanf(textline.c_str(),"Name : %s LastName : %s  Date of Birth %d %s %d",&current_fname, &current_lname );
         cout<<"DP Got From FName Is ::"<< current_fname << endl;
         cout<<"DP Got From LName Is ::"<< current_lname << endl;
-        if (current_fname == fname && current_lname == fname)
+       
+        if (current_fname == fname && current_lname == lname)
         {
             cout << "This Patient has already Registred." << endl;
             return true;
