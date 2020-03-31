@@ -14,5 +14,8 @@ ver 1.0.2
 ver 1.0.3
    + Now our program have login page  
 
-
-
+ver 1.0.4 by phird
+   + Now we can add patient into our database
+      +Can check duplicate name that already Register 
+      +Check isDigit in topic that should be digit and also Check isAlpha in topic that supposed to be Alpha 
+      +added menu that we can return to main menu or re-register.
