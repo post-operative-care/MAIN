@@ -9,13 +9,13 @@ void Select_case(int num_case){
     string local;
     switch (num_case)
     {
-        case 1 : local = "database/postoperative_data/postoperative_abdominal";break;
-        case 2 : local = "database/postoperative_data/postoperative_cesarean";break;
-        case 3 : local = "database/postoperative_data/postoperative_eye";break;
-        case 4 : local = "database/postoperative_data/postoperative_Gynecologic";break;
-        case 5 : local = "database/postoperative_data/postoperative_hernia";break;
-        case 6 : local = "database/postoperative_data/postoperative_hipjoint";break;
-        case 7 : local = "database/postoperative_data/postoperative_spine";break;
+        case 1 : local = "database/postoperative_data/abdominal/information";break;
+        case 2 : local = "database/postoperative_data/cesarean/information";break;
+        case 3 : local = "database/postoperative_data/eye/information";break;
+        case 4 : local = "database/postoperative_data/gynecologic/information";break;
+        case 5 : local = "database/postoperative_data/hernia/information";break;
+        case 6 : local = "database/postoperative_data/hip Replacement/information";break;
+        case 7 : local = "database/postoperative_data/spine/information";break;
     }
     
     data1.open(local.c_str());
