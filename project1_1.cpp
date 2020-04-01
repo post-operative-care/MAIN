@@ -12,8 +12,8 @@ int main()
     
    //  register_page();
    //  login_page();
-   Select_case(1);
-    
+   // Select_case(1);
+    select_file()
 
     return 0;
  }
