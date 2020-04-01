@@ -227,7 +227,7 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
             ch = 1;
             cout<<"\t\t\t Input your patient FirstName :  ";
             getline(cin,fname);
-            if(fname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")!=string::npos)
+            if(fname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")!=string::npos)
             {
                 ch = 0;
                 changeColor(12);
@@ -252,7 +252,7 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
             che = 1;
             cout<<"\t\t\t Input your patient LastName :  ";
             getline(cin,lname);
-            if(lname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")!=string::npos)
+            if(lname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")!=string::npos)
             {
                 che = 0;
                 changeColor(12);
