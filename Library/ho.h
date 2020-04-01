@@ -382,7 +382,7 @@ string login_page()
         }
         
     } while (login_success == false);
-   
+   return 0;
 }
 
 //from yoyo.h
