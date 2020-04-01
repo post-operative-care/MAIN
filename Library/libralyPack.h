@@ -4,7 +4,7 @@
 #include<vector>
 using namespace std;
 
-void Select_case(int num_case){
+char Select_case(int num_case){
     ifstream data1;
     string local;
     switch (num_case)
@@ -24,6 +24,22 @@ void Select_case(int num_case){
     while(getline(data1,textline)){
         cout << textline << endl;
     }
+    data1.close();
+
+    char action;
+    do{
+        cin >> action;
+        if(action == 'A' || action == 'a' ){
+        cout << "OK, I got this." << "\n" << "----------------------------------------------------------------" << "\n";
+        break;
+    }else if(action == 'E' ||action == 'e' ){
+        cout << "Go to main menu." << "\n" << "----------------------------------------------------------------" << "\n";
+        break;
+    }else{
+        cout << "You entered incorrectly. Please enter again." << "\n";
+    }
+    }while(action != 'A' || action != 'a' || action != 'E' ||action != 'e' );
+    
 
 }
 
