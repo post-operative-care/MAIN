@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-  cout << "Please input your username and password to login" ;
+  cout << "Please input your username and password to login." << endl ;
   char usn[20];
   char pw[20];
   cout << "username: " ;
@@ -12,35 +12,36 @@ int main(){
   cout << "password: " ;
   cin >> pw;
 
-  ifstream login_info("user_data.txt");
+  ifstream login_info;
+  login_info.open("user_data.txt");
   string textline;
   
   //how many of line
-  bool havetext;
-  havetext = getline(login_info, textline);
-  int n1=0;
-  while(havetext){
-    n1++;
-    havetext = getline(login_info, textline);
-  }
+ // bool havetext;
+ // havetext = getline(login_info, textline);
+  //int n1=0;
+ // while(havetext){
+ //   n1++;
+ //   havetext = getline(login_info, textline);
+//  }
 
   int n2=0;
   int n=0 ;
   bool check=0;
   bool checkDorP=0;
-  while(n2<=n1){
-    getline(login_info, textline);
-    char text[50] ;
+  char text[50] ;
+  getline(login_info, textline);
+  while(getline(login_info, textline)){
     while(n<50){
       text[n]=textline[n];
       n++;
     }
 
     //sscanf for id and pass
-    char format[] = " %[^= ] %[^P] %[^: ] %[^ ] %[: ] %s";
+    char format[] = "%[^=]= %s %[^:]: %s %[^:]: %s";
     char id[20];
     char pass[20];
-    char type[1];
+    char type[3];
     char blank1[10];
     char blank2[10];
     char blank3[10];
@@ -48,7 +49,7 @@ int main(){
 
     //how many of char id
     bool num ;
-    int x;
+    int x=0;
     num = id[x];
     while(num){
 		  x++;
@@ -66,14 +67,15 @@ int main(){
       }
     }
     if(n==x) correctID=1 ;
+    cout << "x = " << x << endl << "n = " << n << endl ;
 
     //how many of char pass
     bool num1 ;
-    int y;
+    int y=0;
     num1 = pass[y];
     while(num1){
 		  y++;
-		  num1 = id[y];
+		  num1 = pass[y];
 	  }
     //check password
     n=0;
@@ -87,9 +89,10 @@ int main(){
       }
     }
     if(n==y) correctPASS=1 ;
+    cout << "y = " << y << endl << "n = " << n << endl ;
 
     //correct id and pass
-    if(correctID==correctPASS){
+    if(correctID==1&&correctPASS==1){
       //check type
       if(type[0]=='D'){
         checkDorP=1;
@@ -101,8 +104,8 @@ int main(){
          }
     }
 
-    n2++;
-
+   // n2++;
+    getline(login_info, textline);
   }
 
   //check login sugsess or not
@@ -110,5 +113,5 @@ int main(){
     cout << "Logging in sugsess" ;
   }else cout << "Invalid username or password";
 
-  
+  return 0;
 }
