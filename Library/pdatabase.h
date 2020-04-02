@@ -11,42 +11,42 @@
 using namespace std ;
 
 bool isNotNumber(string s) 
-{ 
+ { 
     for (int i = 0; i < s.length(); i++) 
         if (isdigit(s[i]) == true) 
             return false; 
   
     return true; 
-} 
+ } 
 
 
 string upper_string(string str)
-{
+ {
     for(int i=0;str[i]!='\0';i++)
     {
         if (str[i] >= 'a' && str[i] <= 'z')   //checking for lowercase characters
             str[i] = str[i] - 32;        //converting lowercase to uppercase
     }
     return str;
-}
+ }
 
 //THIS FOR CHANGE TEXT COLOR IN CONSOLE
-void changeColor(int desiredColor){
+void changeColor(int desiredColor)
+ {
      SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), desiredColor);
-}
+ }
 //=====================================================================
- //====================================================================
-//============================= OLD VERSION ================================
+//============================= OLD VERSION - And it's a new duplicate checker  ================================
  bool checkduplicateName(string fname,string lname)
- { 
+  { 
     char current_fname[100];
     char current_lname[100];
-    ifstream database_file("database/postoperative_data/userdatabase.txt");
+    ifstream database_file("database/userdatabase.txt");
     string textline;
     
     while (getline(database_file,textline))
     {
-        sscanf(textline.c_str(),"Name : %s LastName : %s  Date of Birth %d %s %d",&current_fname, &current_lname );
+        sscanf(textline.c_str(),"Name : %s LastName : %s  Date of Birth %d %d %d",&current_fname, &current_lname );
         //cout<<"DP Got From FName Is ::"<< current_fname << endl;
         //cout<<"DP Got From LName Is ::"<< current_lname << endl;
         string ucfn(current_fname);
@@ -67,90 +67,15 @@ void changeColor(int desiredColor){
     }
     return false;
     
- } 
+  } 
 
 
 //================================= END OF OLD VERSION =================================
-
-//=-------------=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-/* ool checkduplicateName(string fname,string lname)
- { 
-    char current_fname[100];
-    char current_lname[100];
-    ifstream database_file("database/postoperative_data/userdatabase.txt");
-    string textline;
-    while(getline(database_file,textline))
-    {
-        sscanf(textline.c_str(),"Name : %s LastName : %s  Date of Birth %d %s %d",&current_fname, &current_lname );   
-        cout << current_fname << " and " << current_lname << endl;
-     /*         string ucfn(current_fname);
-            string ucln(current_lname);
-            ucfn = upper_string(current_fname);
-            ucln = upper_string(current_lname);
-            string ufn=upper_string(fname);
-            string uln=upper_string(lname);        
-     //if (ucfn == ufn && ucln == uln) 
-     if (current_fname == fname && current_lname == lname)
-            {    
-            database_file.close(); 
-            return true;
-        }
-        //cout << "THIS JUST TEST FOR UPPER ::  "<< ucfn << " : " << ucln << " and " << ufn << " : " << uln << endl;
-        return false;
-    } 
- } */
-//===========================================================================
-//===========================================================================
-/* bool checkduplicateFName(string fname)
- {
-    char cfname[fname.size()+1];
-    char current_fname[100];
-    ifstream database_file("database/postoperative_data/userdatabase.txt");
-    string textline;
-    
-    while (getline(database_file,textline))
-    {
-        sscanf(textline.c_str(),"Name : %s",&current_fname);
-        //for (int i = 0; i < strlen(cfname); i++) { putchar(toupper(cfname[i]));}
-        //for (int i = 0; i < strlen(current_fname); i++) { putchar(toupper(current_fname[i]));}
-        cout<<"Got From FName Is ::"<< current_fname << endl;
-        if (current_fname == fname)
-        {
-            cout << "This is from F_name." << endl;
-            return true;
-        }        
-    }
-    return false;
-    database_file.close(); 
- }
-bool checkduplicateLName(string lname)
-{
-    char clname[lname.size()+1];
-    char current_lname[100];
-    ifstream database_file("database/postoperative_data/userdatabase.txt");
-    string textline;
-    
-    while (getline(database_file,textline))
-    {
-        sscanf(textline.c_str(),"LastName : %s",&current_lname);
-        //for (int i = 0; i < strlen(clname); i++) { putchar(toupper(clname[i]));}
-        //for (int i = 0; i < strlen(current_lname); i++) { putchar(toupper(current_lname[i]));}
-        cout<<"Got From LName Is ::"<< current_lname << endl;
-        if (current_lname == lname)
-        {
-            cout << "This is from L_name" << endl;
-            return true;
-        }        
-    }
-    return false;
-    database_file.close(); 
-} */
-
 //======================================================================
 //THIS FOR FIND NAME OF MONTH BY INT THAT GET FROM USER 
 string findNameMonth(int a)
-{
-switch (a)
+ {
+ switch (a)
     {
     case 1: return "January";
     case 2: return "February";
@@ -166,58 +91,46 @@ switch (a)
     case 12: return "December";   
     };
     return 0;
-}
+ }
 //=======================================================================
 void Command(){
-int che=1;
-do
-{
-    che=1;
-    int recieve;
-    cout << "\t\t\t ==>  ";
-    cin>>recieve;
-    switch (recieve)
-    {
-    case 1: cout << "\t\t\tStill wait for Fix "<< endl; break; // Wait for fix
-    case 0: cout << "\t\t\tStill wait for Mainmenu "<< endl; break;
-    default:
-    che = 0 ;
-    cout << "Check our Command";
-        break; 
-    }
-    cin.clear();  
-} while (che!=1); 
-}
+ 
+ }
  
 //===========================================================================
 void ShowHasDone(int day,int month,int year,string fname,string lname,string weight,string height){
-cout<< "\t\t\t-=========================================-"<< endl;
-cout<<"\t\t\t Data of  "<<" "<< fname << " " << lname <<endl;
-cout<<"\t\t\tWeight :"<< weight << " " << "Height :" << height <<endl;
-cout<<"\t\t\t"<< "Date of Birth is "<< day << " "<< findNameMonth(month) <<" "<< year <<endl;
-cout << "\t\t\thas added in database , THANKS !\n"  ;
-cout<< "\t\t\t-=========================================-"<<endl;
-cout<< "\t\t\t[ Press (1) : if you want to add new patient ]" << endl;
-cout<< "\t\t\t[ Press (0) : Back To MENU ! ]"<< endl;
-Command();
-cout<< "\t\t\t-=========================================-"<<endl;
-}
+ cout<< "\t\t\t-=========================================-"<< endl;
+ cout<<"\t\t\t Data of  "<<" "<< fname << " " << lname <<endl;
+ cout<<"\t\t\tWeight :"<< weight << " " << "Height :" << height <<endl;
+ cout<<"\t\t\t"<< "Date of Birth is "<< day << " "<< findNameMonth(month) <<" "<< year <<endl;
+ cout << "\t\t\thas added in database , THANKS !\n"  ;
+ cout<< "\t\t\t-=========================================-"<<endl;
+ cout<< "\t\t\t[ Press (1) : if you want to add new patient ]" << endl;
+ cout<< "\t\t\t[ Press (0) : Back To MENU ! ]"<< endl;
+ cout<< "\t\t\t-=========================================-"<<endl;
+ }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-int main(){
 
+
+
+
+
+
+int main(){
+Start :
+cin.clear(); 
 string fname,lname;
 int day=0, month=0, year=0 ;
-//system("COLOR 5F"); //COLOR 
 cout<< "\t\t\t-=========================================-"<< endl;
 cout<<"\t\t\t\t WELCOME TO REGISTER PAGE"<<endl;
 cout<< "\t\t\t-=========================================-"<<endl;
 cout<<"\t\t\t Enter Your Patient Data Follow This \n"<<endl;
 //=======================================================================================
 
-int acheck=1;
-do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !  
-{
+ int acheck=1;
+  do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !  
+  {
     int acheck=1;
         int ch=1;
         //=========================== Loop FirstName Start here ==================================
@@ -227,7 +140,7 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
             ch = 1;
             cout<<"\t\t\t Input your patient FirstName :  ";
             getline(cin,fname);
-            if(fname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")!=string::npos)
+            if(fname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")!=string::npos)
             {
                 ch = 0;
                 changeColor(12);
@@ -238,7 +151,7 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
             {
                 ch = 0;
                 changeColor(12);
-                cout<<"\t\t\tPlease enter your patient firstname!\n";
+                cout<<"\n\t\t\tPlease enter your patient firstname!\n";
                 changeColor(7);
             }
         cin.clear();
@@ -252,7 +165,7 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
             che = 1;
             cout<<"\t\t\t Input your patient LastName :  ";
             getline(cin,lname);
-            if(lname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ")!=string::npos)
+            if(lname.find_first_not_of( "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")!=string::npos)
             {
                 che = 0;
                 changeColor(12);
@@ -278,15 +191,15 @@ do // IN DUOLICATE CHECK LOOP,LOOP ISN'T WORKIMG BUT USING GOTO INSTEAD !
         goto RegisterHere ;
     }
     cin.clear(); 
-}while ( acheck!=1 );
+ }while ( acheck!=1 );
 
 //========================================================================================
 
 string weight,height;
 
 int chw = 1 ;
-do
-{
+do  //CHECK PATIENT WEIGHT AND HEIGHT
+ {
     chw = 1;
     cout<<"\t\t\t Input your patient Weight (kg) : ";
     cin>>weight;
@@ -298,12 +211,12 @@ do
         changeColor(7);
     }
     cin.clear();  
-} while (chw!=1);
+ } while (chw!=1);
 
-//=============================================================================================
-int chh=1;
-do
-{
+ //=============================================================================================
+ int chh=1;
+ do
+  {
     chh=1;
     cout<<"\t\t\t Input your patient height (cm) : ";
     cin>>height;
@@ -315,13 +228,13 @@ do
         changeColor(7);
     }
     cin.clear();  
-} while (chh!=1);
+ } while (chh!=1);
 
 //========================================================================================
-//THIS FOR CHECK AND GET DATE OF BIRTH !
+
 int chb = 1;
-do
-{
+do  //THIS FOR CHECK AND GET DATE OF BIRTH !
+ {
     chb = 1;
     cout<<"\t\t\t Input your patient Birthday (dd mm yyyy) e.g 01 02 2000 ::  ";
     cin>>day>>month>>year;
@@ -371,13 +284,23 @@ do
            changeColor(7);
         }
      cin.clear();     
-} 
-while( chb !=1 );
+ } while( chb !=1 );
 //=======================================================================
 // all here is for check before push back 
 ShowHasDone(day,month,year,fname,lname,weight,height);
-ofstream write("database/postoperative_data/userdatabase.txt",ios::out|ios::app); //Plan to delete what we just added
-write << "Name : " <<fname<< " "<< "LastName : " <<lname << "  Date of Birth: "<<day<<" "<< findNameMonth(month) <<" "<< year << "   height:" << height << "  Weight:" << weight << endl;
+//======================================================
+int recieve;
+cout << "\t\t\t ==>  ";
+cin>>recieve;
+switch (recieve){
+    case 1: goto Start ;  cin.clear(); break; // Wait for fix
+    case 0: cout << "\t\t\tStill wait for Mainmenu "<< endl; break;
+    default:
+     cout << "Check our Command"; break; 
+    }
+//========================================================
+ofstream write("database/userdatabase.txt",ios::out|ios::app); //Plan to delete what we just added
+write << "Name : " <<fname<< " "<< "LastName : " <<lname << "  Date of Birth: "<<day<<" / "<<month<<" / "<< year << "   height:" << height << "  Weight:" << weight << endl;
 write.close();
 
 }
