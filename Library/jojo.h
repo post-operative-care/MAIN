@@ -97,11 +97,41 @@ int main(){
    // n2++;
     getline(login_info, textline);
   }
+  //login_info.close;
 
   //check login sugsess or not
+  bool next=0;
   if(check){
-    cout << "Logging in sugsess" ;
+    cout << "\nLogging in sugsess\n" ;
+    next=1;
   }else cout << "Invalid username or password";
+
+  //login_info.open waiting for information
+  //getline(login_info, textline);
+  //int k;
+  //string Number[k];
+  //int select;
+  if(next){
+    cout << "_____________________________________________________________\n\n";
+    if(checkDorP){
+      cout << "Dortor : \n" ; //wait for information
+      //while(true){
+        //cout << "your patien : " ;
+        //getline(login_info, textline);
+        //while(getline(login_info, textline)){
+           // cout << "[" << (k+1) << "]" << textline << "\n";
+           // Number[k+1] = textline ;
+           // k++;
+           // getline(login_info, textline);
+        //}
+        //cout << "Select your partient by number or exist select 0. : " ;
+        //cin >> select ;
+        //if(select == 0) break ;
+        //cout << Number[select] << "\n" ;
+        //getline(login_info, textline)
+      }else cout << "Mr \n" ; //wait for information
+    }
+  
 
   return 0;
 }
