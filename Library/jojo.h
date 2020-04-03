@@ -16,7 +16,7 @@ int main(){
   login_info.open("database/user_data.txt");
   string textline;
 
-  int n2=0;
+  int x=0;
   int n=0 ;
   bool check=0;
   bool checkDorP=0;
@@ -40,7 +40,6 @@ int main(){
 
     //how many of char id
     bool num ;
-    int x=0;
     num = id[x];
     while(num){
 		  x++;
@@ -57,7 +56,7 @@ int main(){
         break;
       }
     }
-    if(n==x) correctID=1 ;
+    if((n+1)==x) correctID=1 ;
     cout << "x = " << x << endl << "n = " << n << endl ;
 
     //how many of char pass
