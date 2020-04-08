@@ -19,27 +19,60 @@ char Select_case(int num_case){
     }
     
     data1.open(local.c_str());
-    string textline;
-
-    while(getline(data1,textline)){
-        cout << textline << endl;
-    }
-    data1.close();
-
-    char action;
-    do{
-        cin >> action;
-        if(action == 'A' || action == 'a' ){
-        cout << "OK, I got this." << "\n" << "----------------------------------------------------------------" << "\n";
-        break;
-    }else if(action == 'E' ||action == 'e' ){
-        cout << "Go to main menu." << "\n" << "----------------------------------------------------------------" << "\n";
-        break;
-    }else{
-        cout << "You entered incorrectly. Please enter again." << "\n";
-    }
-    }while(action != 'A' || action != 'a' || action != 'E' ||action != 'e' );
+    string textline,text_read;
     
 
+    char select;
+    string skeyword,ekeyword;
+    do{
+        cout << "select data :" ;
+        cin >> select;
+        if(select == 'A' || select == 'a' )
+        {
+        skeyword = "!";
+        ekeyword = "@";
+        break;
+        }
+        else if(select == 'W' ||select == 'w' )
+        {
+        skeyword = "#";
+        ekeyword = "$";
+        break;
+        }
+        else if(select == 'D' ||select == 'd' )
+        {
+        skeyword = "%";
+        ekeyword = "^";
+        break;
+        }
+        else if(select == 'P' ||select == 'p' ){
+        skeyword = "&";
+        ekeyword = "*";
+        break;
+        }
+        else
+        {
+        cout << "You entered incorrectly. Please enter again." << "\n";
+    }
+    }while(select != 'A' || select != 'a' || select != 'D' ||select != 'd' || select != 'W' || select != 'W' || select != 'P' ||select != 'p'  );
+    
+    int start,end,count=0;
+    while(getline(data1,textline)){    
+        int start = textline.find_first_of(skeyword);
+        int end = textline.find_first_of(ekeyword);
+        if(start==-1&&end==-1&&count==0){
+            continue;
+        }else if(start!=-1){
+            cout << textline.substr(1,textline.size()) << "\n";
+            count = 1;
+        }else if(end==-1&&count==1) {
+            cout << textline << "\n";
+        }else{
+            cout << textline.substr(0,textline.size()-1) << "\n";
+            break;
+            } ;
+    }
+    
+    data1.close();
 }
 
