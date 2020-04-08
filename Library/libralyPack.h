@@ -74,5 +74,34 @@ char Select_case(int num_case){
     }
     
     data1.close();
+    return 0;
 }
 
+char check_if_read()
+{
+    ifstream file_userdata ("");
+
+
+
+     char action;
+    do{
+        cout << "Please enter your selection : ";
+        cin >> action;
+        if(action == 'A' || action == 'a' )
+        {
+            cout << "OK, I got this." << "\n" << "----------------------------------------------------------------" << "\n";
+        return 'A';
+        }
+        else if(action == 'E' ||action == 'e' )
+        {
+            cout << "Go to main menu." << "\n" << "----------------------------------------------------------------" << "\n";
+        return 'E';
+        }
+        else
+        {
+            cout << "You entered incorrectly. Please enter again." << "\n";
+        }
+        }while(action != 'A' || action != 'a' || action != 'E' ||action != 'e' );
+    
+    return 0;
+}
