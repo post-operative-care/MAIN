@@ -22,6 +22,14 @@ return str_idEnc;
 
 string EncryptionID(string x){
     char encryp[69];
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> Edited by DevPHIRD
+=======
+
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
     strcpy(encryp,x.c_str());
     for (int i = 0; i < 69 && encryp[i] != '\0' ; i++)
     {
@@ -31,6 +39,8 @@ string EncryptionID(string x){
     //cout <<"WHAT DAFUQ :: " << a << " ";
 return a;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 string EncryptionPASS(string y){
@@ -58,6 +68,42 @@ string DecrypttionID(string x){
 return deID;
 }
 
+=======
+}
+
+=======
+}
+
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
+string EncryptionPASS(string y){
+    char encrypPass[69];
+
+    strcpy(encrypPass,y.c_str());
+    for (int j = 0; j < 69 && encrypPass[j] != '\0' ; j++)
+    {
+        encrypPass[j]=encrypPass[j]+3;
+    }
+    string p = encrypPass;
+    //cout <<" Pass DAFUQ :: " << p << " ";
+return p;
+}
+
+string DecrypttionID(string x){
+    char decrypID[69];
+
+    strcpy(decrypID,x.c_str());
+    for (int i = 0; i < 69 && decrypID[i] != '\0' ; i++)
+    {
+        decrypID[i]=decrypID[i]-2;
+    }
+    string deID = decrypID;
+return deID;
+}
+
+<<<<<<< HEAD
+>>>>>>> Edited by DevPHIRD
+=======
+>>>>>>> b0b7c6fccd63ee4471fa25ce3fef6835e3547430
 string DecrypttionPASS(string x){
     char decrypPASS[69];
 
