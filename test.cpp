@@ -21,13 +21,13 @@ int main(){
   bool check=0;
   bool checkDorP=0;
   char text[50] ;
-  getline(login_info, textline);
+ // getline(login_info, textline);
   while(getline(login_info, textline)){
     while(n<50){
       text[n]=textline[n];
       n++;
     }
-
+  
     //sscanf for id and pass
     char format[] = "%[^=]= %s %[^:]: %s %[^:]: %s";
     char id[20];
@@ -80,6 +80,7 @@ int main(){
     }
     if(n==y) correctPASS=1 ;
     cout << "y = " << y << endl << "n = " << n << endl ;
+    cout << "__________________________________________\n";
 
     //correct id and pass
     if(correctID==1&&correctPASS==1){
@@ -95,14 +96,14 @@ int main(){
     }
 
    // n2++;
-    getline(login_info, textline);
+    //getline(login_info, textline);
   }
   //login_info.close;
 
   //check login sugsess or not
   bool next=0;
   if(check){
-    cout << "\nLogging in sugsess\n" ;
+    cout << "\nLogging in success\n" ;
     next=1;
   }else cout << "Invalid username or password";
 
@@ -132,6 +133,6 @@ int main(){
       }else cout << "Mr \n" ; //wait for information
     }
   
-
+  login_info.close();
   return 0;
 }

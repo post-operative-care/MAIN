@@ -102,7 +102,7 @@ int main(){
   //check login sugsess or not
   bool next=0;
   if(check){
-    cout << "\nLogging in sugsess\n" ;
+    cout << "\nLogging in success\n" ;
     next=1;
   }else cout << "Invalid username or password";
 
