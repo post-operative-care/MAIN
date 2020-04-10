@@ -105,9 +105,6 @@ void ShowHasDone(int day,int month,int year,string fname,string lname,string wei
  cout<<"\t\t\t"<< "Date of Birth is "<< day << " "<< findNameMonth(month) <<" "<< year <<endl;
  cout << "\t\t\thas added in database , THANKS !\n"  ;
  cout<< "\t\t\t-=========================================-"<<endl;
- cout<< "\t\t\t[ Press (1) : if you want to add new patient ]" << endl;
- cout<< "\t\t\t[ Press (0) : Back To MENU ! ]"<< endl;
- cout<< "\t\t\t-=========================================-"<<endl;
  }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -118,7 +115,6 @@ void ShowHasDone(int day,int month,int year,string fname,string lname,string wei
 
 
 int main(){
-Start :
 cin.clear(); 
 string fname,lname;
 int day=0, month=0, year=0 ;
@@ -289,15 +285,7 @@ do  //THIS FOR CHECK AND GET DATE OF BIRTH !
 // all here is for check before push back 
 ShowHasDone(day,month,year,fname,lname,weight,height);
 //======================================================
-int recieve;
-cout << "\t\t\t ==>  ";
-cin>>recieve;
-switch (recieve){
-    case 1: goto Start ;  cin.clear(); break; // Wait for fix
-    case 0: cout << "\t\t\tStill wait for Mainmenu "<< endl; break;
-    default:
-     cout << "Check our Command"; break; 
-    }
+
 //========================================================
 ofstream write("database/userdatabase.txt",ios::out|ios::app); //Plan to delete what we just added
 write << "Name : " <<fname<< " "<< "LastName : " <<lname << "  Date of Birth: "<<day<<" / "<<month<<" / "<< year << "   height:" << height << "  Weight:" << weight << endl;
