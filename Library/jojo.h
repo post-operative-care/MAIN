@@ -21,13 +21,13 @@ int main(){
   bool check=0;
   bool checkDorP=0;
   char text[50] ;
-  getline(login_info, textline);
+ // getline(login_info, textline);
   while(getline(login_info, textline)){
     while(n<50){
       text[n]=textline[n];
       n++;
     }
-
+  
     //sscanf for id and pass
     char format[] = "%[^=]= %s %[^:]: %s %[^:]: %s";
     char id[20];
@@ -56,7 +56,7 @@ int main(){
         break;
       }
     }
-    if((n+1)==x) correctID=1 ;
+    if(n==x) correctID=1 ;
     cout << "x = " << x << endl << "n = " << n << endl ;
 
     //how many of char pass
@@ -80,6 +80,7 @@ int main(){
     }
     if(n==y) correctPASS=1 ;
     cout << "y = " << y << endl << "n = " << n << endl ;
+    cout << "__________________________________________\n";
 
     //correct id and pass
     if(correctID==1&&correctPASS==1){
@@ -95,7 +96,7 @@ int main(){
     }
 
    // n2++;
-    getline(login_info, textline);
+    //getline(login_info, textline);
   }
   //login_info.close;
 
@@ -132,6 +133,6 @@ int main(){
       }else cout << "Mr \n" ; //wait for information
     }
   
-
+  login_info.close();
   return 0;
 }

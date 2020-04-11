@@ -56,7 +56,7 @@ int main(){
         break;
       }
     }
-    if((n+1)==x) correctID=1 ;
+    if(n==x) correctID=1 ;
     cout << "x = " << x << endl << "n = " << n << endl ;
 
     //how many of char pass
