@@ -109,8 +109,8 @@ int main(){
 
   ifstream userdata;
   userdata.open("database/userdatabase.txt");
-  int k,i=0;
-  string Number(k,100);
+  int k;
+  string Number[k];
   int select;
   if(next){
     cout << "_____________________________________________________________\n\n";
@@ -120,29 +120,19 @@ int main(){
         cout << "your patien : \n" ;
         while(getline(userdata, textline)){
             cout << "[" << (k+1) << "]  " << textline << "\n";
-            i=0;
             k++;
-            while(i<100){
-              Number[k+1,i] = textline[i] ;
-              i++;
-              }
+            Number[k+1] = textline ;
             }
             cout << "\nSelect your partient by number or exist select 0 : " ;
             cin.ignore();
             cin >> select ;
             if(select == 0){
                break ;
-               i=0;
               }else{
-                while(i<100){
-                cout << Number[select,i] ;
-                i++;
+                cout << Number[select] ;
                 }
               }
           }
       }else cout << "Mr \n" ; //wait for information for Patien
-  }
-  
-  userdata.close();
-  return 0;
+   
 }
